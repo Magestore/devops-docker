@@ -19,8 +19,7 @@ RUN apt-get install -y iptables libapparmor1 libltdl7 \
 	&& curl -o docker-ce -L "https://apt.dockerproject.org/repo/pool/testing/d/docker-engine/docker-engine_17.05.0~ce~rc3-0~debian-jessie_amd64.deb" \
 	&& dpkg -i docker-ce && docker --version
 
-# copy source to /app
-COPY entrypoint.sh /app/entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 # This container is a chrooted docker-compose
 WORKDIR /app
@@ -29,6 +28,6 @@ VOLUME ["/app"]
 
 EXPOSE 80 443
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["version"]
 
