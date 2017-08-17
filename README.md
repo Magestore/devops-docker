@@ -32,8 +32,8 @@ example run docker lamp in docker
 
 ```
 git clone https://github.com/Magestore/devops-docker-lamp.git
-cd devops-docker-lamp \
-   && docker run -it -d --privileged -p 80:80 -p 443:443 --name my_lamp_docker -v "`pwd`:/app" thinlt/docker up -d
+cd devops-docker-lamp
+docker run -it -d --privileged -p 80:80 -p 443:443 --name my_lamp_docker -v "`pwd`:/app" thinlt/docker up -d
 ```
 
 see version of thinlt/docker
